@@ -1,6 +1,6 @@
 {
   "name": "create-planor-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to create a new Planor App",
   "main": "dist/index.js",
   "bin": {
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node bin/index.js",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "react-native",
