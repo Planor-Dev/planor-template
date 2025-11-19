@@ -43,17 +43,7 @@ program
     const spinner = ora('Downloading template...').start();
 
     try {
-      // Clone the current repository.
-      // TODO: Replace 'your-username/planor-template' with the actual repo URL when published.
-      // For now, we assume the user will update this or we use a placeholder.
-      // Since I don't know the remote URL, I'll use a placeholder that the user needs to update.
-      // However, for local testing, degit works with local paths if prefixed with 'git@' or similar but usually for remote.
-      // I will use the current directory as source if we are running locally for test,
-      // but for a real CLI it needs a repo.
-      // I'll use a placeholder 'selim/planor-template' based on the path, but user might need to change it.
-      // Actually, let's ask the user to verify the repo URL in the plan.
-      // For now I will put a placeholder.
-      const emitter = degit('selim/planor-template', {
+      const emitter = degit('klanvend0/planor-template', {
         cache: false,
         force: true,
         verbose: true,
