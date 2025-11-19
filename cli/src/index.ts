@@ -43,7 +43,7 @@ program
     const spinner = ora('Downloading template...').start();
 
     try {
-      const emitter = degit('klanvend0/planor-template', {
+      const emitter = degit('Planor-Dev/planor-template', {
         cache: false,
         force: true,
         verbose: true,
