@@ -1,6 +1,6 @@
 {
   "name": "create-planor-app",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "CLI to create a new Planor App",
   "main": "dist/index.js",
   "bin": {

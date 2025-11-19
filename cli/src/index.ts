@@ -52,6 +52,25 @@ program
       await emitter.clone(targetDir);
       spinner.succeed('Template downloaded!');
 
+      // Update package.json name
+      const packageJsonPath = path.join(targetDir, 'package.json');
+      if (fs.existsSync(packageJsonPath)) {
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+        packageJson.name = name;
+        fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+      }
+
+      // Update app.json name and slug
+      const appJsonPath = path.join(targetDir, 'app.json');
+      if (fs.existsSync(appJsonPath)) {
+        const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf-8'));
+        if (appJson.expo) {
+          appJson.expo.name = name;
+          appJson.expo.slug = name;
+        }
+        fs.writeFileSync(appJsonPath, JSON.stringify(appJson, null, 2));
+      }
+
       // Remove the cli folder from the generated project
       const cliDir = path.join(targetDir, 'cli');
       if (fs.existsSync(cliDir)) {
