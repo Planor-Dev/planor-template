@@ -19,13 +19,17 @@ import { PostHogProvider } from 'posthog-react-native';
 export default function RootLayout() {
   const { colorScheme } = useColorScheme();
 
-  return (
-    <PostHogProvider client={posthog}>
-      <ThemeProvider value={NAV_THEME[colorScheme ?? 'light']}>
-        <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
-        <Stack />
-        <PortalHost />
-      </ThemeProvider>
-    </PostHogProvider>
+  const content = (
+    <ThemeProvider value={NAV_THEME[colorScheme ?? 'light']}>
+      <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
+      <Stack />
+      <PortalHost />
+    </ThemeProvider>
   );
+
+  if (posthog) {
+    return <PostHogProvider client={posthog}>{content}</PostHogProvider>;
+  }
+
+  return content;
 }
