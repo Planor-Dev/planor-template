@@ -1,4 +1,4 @@
-# Planor App Template
+# **APP_NAME** Template
 
 A production-ready React Native / Expo template built for speed and scalability.
 
@@ -24,7 +24,7 @@ Use this template on GitHub or clone it:
 # Click "Use this template" button on GitHub
 
 # Or clone directly
-git clone https://github.com/Planor-Dev/planor-template.git my-app
+git clone https://github.com/YOUR_ORG/__APP_SLUG__.git my-app
 cd my-app
 rm -rf .git && git init
 ```

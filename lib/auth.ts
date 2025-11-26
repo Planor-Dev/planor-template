@@ -155,7 +155,7 @@ export async function signInWithApple(): Promise<AuthResult> {
  */
 export function getRedirectUri(): string {
   return makeRedirectUri({
-    scheme: 'planor-template',
+    scheme: '__APP_SLUG__',
     path: 'auth/callback',
   });
 }
@@ -165,7 +165,7 @@ export function getRedirectUri(): string {
  *
  * Opens a web browser for Google authentication through Supabase.
  * After successful authentication, Supabase redirects back to the app
- * using the configured deep link (planor-template://auth/callback).
+ * using the configured deep link (__APP_SLUG__://auth/callback).
  *
  * @returns AuthResult indicating success or failure with error message
  *
@@ -214,7 +214,7 @@ export async function signInWithGoogle(): Promise<AuthResult> {
 
     if (result.type === 'success' && result.url) {
       // Extract tokens from the callback URL
-      // The URL format is: planor-template://auth/callback#access_token=...&refresh_token=...
+      // The URL format is: __APP_SLUG__://auth/callback#access_token=...&refresh_token=...
       const url = result.url;
       const hashParams = url.split('#')[1];
 

@@ -88,7 +88,7 @@ async function main() {
   console.log('─'.repeat(50) + '\n');
 
   // Get Team ID
-  const teamId = await question('📋 Enter your Apple Team ID (e.g., 8L8M2BK473): ');
+  const teamId = await question('📋 Enter your Apple Team ID (e.g., XXXXXXXXXX): ');
   if (!teamId.trim()) {
     console.error('❌ Team ID is required');
     rl.close();
@@ -105,7 +105,7 @@ async function main() {
 
   // Get Client ID (Service ID)
   const clientId = await question(
-    '🆔 Enter your Service ID / Client ID (e.g., com.planor.template.signin): '
+    '🆔 Enter your Service ID / Client ID (e.g., com.example.app.signin): '
   );
   if (!clientId.trim()) {
     console.error('❌ Client ID is required');

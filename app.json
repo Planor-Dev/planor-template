@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "planor-template",
-    "slug": "planor-template",
+    "name": "__APP_NAME__",
+    "slug": "__APP_SLUG__",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "planor-template",
+    "scheme": "__APP_SLUG__",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
@@ -13,18 +13,16 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.planor.template",
+      "bundleIdentifier": "__BUNDLE_ID__",
       "usesAppleSignIn": true,
-      "appleTeamId": "8L8M2BK473"
+      "appleTeamId": "__APPLE_TEAM_ID__"
     },
     "android": {
       "edgeToEdgeEnabled": true,
-      "package": "com.planor.template",
+      "package": "__BUNDLE_ID__",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

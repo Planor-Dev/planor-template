@@ -56,10 +56,10 @@ Before setting up OAuth, ensure you have:
 ### 5. Configure Supabase Redirect URLs
 
 1. Go to **Authentication > URL Configuration**
-2. Set **Site URL** to: `planor-template://`
+2. Set **Site URL** to: `__APP_SLUG__://`
 3. Add to **Redirect URLs**:
-   - `planor-template://auth/callback`
-   - `planor-template://**` (wildcard for flexibility)
+   - `__APP_SLUG__://auth/callback`
+   - `__APP_SLUG__://**` (wildcard for flexibility)
 
 ---
 
@@ -86,7 +86,7 @@ Before setting up OAuth, ensure you have:
 2. Click **+** to create a new Service ID
 3. Fill in:
    - Description: `Planor App Sign-In`
-   - Identifier: `com.planor.template.signin` (example)
+   - Identifier: `__BUNDLE_ID__.signin` (example)
 4. Enable **Sign In with Apple**
 5. Configure:
    - Domains: Your Supabase project URL domain
@@ -121,7 +121,7 @@ The `app.json` is already configured with:
 {
   "expo": {
     "ios": {
-      "bundleIdentifier": "com.planor.template",
+      "bundleIdentifier": "__BUNDLE_ID__",
       "usesAppleSignIn": true
     },
     "plugins": ["expo-apple-authentication"]
@@ -136,10 +136,10 @@ The `app.json` is already configured with:
 ### Supabase Redirect URLs
 
 1. Go to Supabase Dashboard > Authentication > URL Configuration
-2. Set **Site URL** to: `planor-template://`
+2. Set **Site URL** to: `__APP_SLUG__://`
 3. Add to **Redirect URLs**:
-   - `planor-template://auth/callback`
-   - `planor-template://**`
+   - `__APP_SLUG__://auth/callback`
+   - `__APP_SLUG__://**`
 
 > **Important:** The deprecated `auth.expo.io` proxy is no longer recommended. Always use your app's custom URL scheme with Supabase's callback flow.
 
